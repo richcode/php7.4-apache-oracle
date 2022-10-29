@@ -1,0 +1,11 @@
+version: "3"
+services:
+  web:
+    # image: ikawka/php:7.4-apache-oracle
+    build: .
+    volumes:
+      - ./conf:/etc/apache2/sites-available
+      - ./conf:/etc/apache2/sites-enabled
+      - .:/var/www/html
+    ports:
+      - 8080:80
